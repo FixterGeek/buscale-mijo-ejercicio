@@ -3,13 +3,14 @@ import SearchBar from './components/SearchBar';
 import Table from './components/Table'
 import getPeople from './utils/getPeople'
 
+const users = getPeople();
+
 function App() {
-  const users = getPeople();
   const [filtered,setFiltered] = useState(users);
 
   // Solución con regex
   const handleSearchWithRegex = (text) => {
-    const newRegex = new RegExp(text,'g');
+    const newRegex = new RegExp(text,'i');
     setFiltered( users.filter(user => 
       user.firstName.match(newRegex) ||
       user.lastName.match(newRegex) ||
