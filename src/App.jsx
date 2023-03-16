@@ -17,10 +17,6 @@ function App() {
 
   const results = !search ? dataUsers : dataUsers.filter( (data) => { 
     const {firstName, lastName, email, amount} = data;
-    /*const regex = RegExp(/^\$\.MXN/$/); 
-    const validarAmount = amount.includes(search);
-    const found = validarAmount.match(regex)
-    console.log(validarAmount)*/
 
     if(firstName.toLowerCase().includes(search.toLowerCase()) || lastName.toLowerCase().includes(search.toLowerCase())
        || email.toLowerCase().includes(search.toLowerCase()) || amount.includes(search)){
